@@ -1,19 +1,159 @@
-{% extends "base.html" %}
- {% block content %}
-  
-    <h1>Booking</h1>
-    <h4>Available Apartments</h4>
-    {% for apartment in  apartments%}
 
-        <div class="card" style="width: 18rem;">
-        <img src="{{apartment.image.url}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{apartment.name}}</h5>
-            <p class="card-text">{{apartment.price}}</p>
-            <a href="{% url "apartment_page" apartment.id %}" class="btn btn-primary">Book now</a>
+{% extends "base.html" %}
+
+{% block title %}BlueStay | Home{% endblock %}
+
+{% block content %}
+
+<section class="hero" id="home">
+    <div class="hero-label">BLUE STAY / TRAVEL & DISCOVER</div>
+
+    <div class="hero-symbol">
+        <div class="device monitor"></div>
+        <div class="device tablet"></div>
+        <div class="device phone"></div>
+    </div>
+
+    <h1>Find Your Stay</h1>
+
+    <p>
+        Discover unique apartments and hotels for your next journey.<br>
+        Simple booking. Comfortable places. New experiences.
+    </p>
+
+    <a href="#apartments" class="hero-button">
+        EXPLORE PLACES &rarr;
+    </a>
+</section>
+
+<main class="portfolio">
+
+    <!-- APARTMENTS -->
+    <section id="apartments">
+
+        <div class="section-heading">
+            <div class="section-icon">✎</div>
+            <h2>Available Apartments</h2>
+            <p>A collection of places for your next stay.</p>
+            <div class="section-line"></div>
         </div>
+
+        <h3 class="category-title">01 / Apartments</h3>
+
+        <div class="listing-grid">
+
+            {% for apartment in apartments %}
+                <article class="listing-card">
+
+                    {% if apartment.image %}
+                        <img
+                            src="{{ apartment.image.url }}"
+                            class="listing-image"
+                            alt="{{ apartment.name }}"
+                        >
+                    {% else %}
+                        <div class="image-empty">⌂</div>
+                    {% endif %}
+
+                    <div class="listing-body">
+
+                        <div class="listing-number">
+                            APARTMENT / {{ forloop.counter|stringformat:"02d" }}
+                        </div>
+
+                        <h3>{{ apartment.name }}</h3>
+
+                        <div class="listing-location">
+                            LOCATION: {{ apartment.location }}
+                        </div>
+
+                        <span class="type-badge">
+                            {{ apartment.get_type_apartment_display }}
+                        </span>
+
+                        <div class="listing-description">
+                            {% if apartment.description %}
+                                {{ apartment.description|truncatewords:12 }}
+                            {% else %}
+                                A comfortable place for your next journey.
+                            {% endif %}
+                        </div>
+
+                        <div class="listing-bottom">
+                            <div class="listing-price">
+                                {{ apartment.price_per_night }}
+                                <small>PRICE / NIGHT</small>
+                            </div>
+
+                            <a
+                                href="{% url 'apartment_page' apartment.id %}"
+                                class="listing-button"
+                            >
+                                BOOK NOW &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            {% empty %}
+                <div class="empty-state">
+                    NO APARTMENTS FOUND<br>
+                    New places will appear here soon.
+                </div>
+            {% endfor %}
+
         </div>
-    
-    {% endfor %}
- 
- {% endblock  %}
+    </section>
+
+    <!-- HOTELS -->
+    <section id="hotels" class="hotels-section">
+
+        <div class="section-heading">
+            <div class="section-icon">✎</div>
+            <h2>Explore Hotels</h2>
+            <p>Find your next destination in our hotel collection.</p>
+            <div class="section-line"></div>
+        </div>
+
+        <h3 class="category-title">02 / Hotels</h3>
+
+        <div class="listing-grid">
+
+            {% for hotel in hotels %}
+                <article class="listing-card hotel-card">
+
+                    <div class="image-empty">⌂</div>
+
+                    <div class="listing-body">
+
+                        <div class="listing-number">
+                            HOTEL / {{ forloop.counter|stringformat:"02d" }}
+                        </div>
+
+                        <h3>{{ hotel.name }}</h3>
+
+                        <div class="listing-location">
+                            LOCATION: {{ hotel.location }}
+                        </div>
+
+                        <div class="listing-description">
+                            {{ hotel.description|truncatewords:18 }}
+                        </div>
+
+                    </div>
+                </article>
+
+            {% empty %}
+                <div class="empty-state">
+                    NO HOTELS FOUND<br>
+                    Hotel information will appear here soon.
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
+
