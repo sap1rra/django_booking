@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="success-page">
+
+    <div class="success-container">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <p class="success-label">BLUESTAY / BOOKING</p>
+
+        <h1>Booking confirmed!</h1>
+
+        <p class="success-description">
+            Дякуємо за бронювання! Ваш запит успішно прийнято.
+            Ми раді, що ви обрали BlueStay.
+        </p>
+
+        <div class="success-details">
+            <h2>Booking details</h2>
+
+            <div class="success-row">
+                <span>Apartments</span>
+                <strong>{{ booking.apartment.name }}</strong>
+            </div>
+
+            <div class="success-row">
+                <span>Name</span>
+                <strong>{{ booking.name }}</strong>
+            </div>
+
+            <div class="success-row">
+                <span>Email</span>
+                <strong>{{ booking.email }}</strong>
+            </div>
+
+            <div class="success-row">
+                <span>Check-in Date</span>
+                <strong>{{ booking.check_in }}</strong>
+            </div>
+
+            <div class="success-row">
+                <span>Check-out Date</span>
+                <strong>{{ booking.check_out }}</strong>
+            </div>
+
+            <div class="success-row">
+                <span>Status</span>
+                <strong class="pending-status">{{ booking.get_status_display }}</strong>
+            </div>
+        </div>
+
+        <a href="{% url 'home' %}" class="success-button">
+            Back to home
+        </a>
+
+        <p class="success-footer">
+            Thank you for choosing BlueStay.
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}
