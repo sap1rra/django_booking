@@ -570,3 +570,817 @@ h1, h2, h3, h4, h5 {
         align-items: center;
     }
 }
+
+
+.apartment-page {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    color: #263746;
+}
+
+.apartment-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.apartment-label,
+.info-label {
+    color: #36a6a6;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.apartment-heading h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.apartment-heading p:last-child {
+    color: #788995;
+}
+
+.apartment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    background: white;
+    border: 1px solid #e1e9ed;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(30, 70, 90, 0.06);
+}
+
+.apartment-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.no-apartment-image {
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f5f6;
+    color: #788995;
+    border-radius: 14px;
+}
+
+.apartment-info h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.apartment-description {
+    color: #788995;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.apartment-details {
+    border-top: 1px solid #e1e9ed;
+}
+
+.apartment-details div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e1e9ed;
+}
+
+.apartment-details span,
+.apartment-price span {
+    color: #788995;
+}
+
+.apartment-details strong {
+    text-align: right;
+}
+
+.apartment-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+.apartment-price strong {
+    color: #269c9c;
+    font-size: 24px;
+}
+
+.apartment-book-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: #269c9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.apartment-book-button:hover {
+    background: #207f83;
+    color: white;
+}
+
+.apartment-unavailable {
+    color: #c65b5b;
+    text-align: center;
+    padding: 12px;
+    background: #fff0f0;
+    border-radius: 9px;
+}
+
+@media (max-width: 750px) {
+    .apartment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .apartment-image img {
+        height: 280px;
+    }
+
+    .apartment-heading h1 {
+        font-size: 28px;
+    }
+}
+
+
+
+/* =================================
+   AUTHENTICATION / REGISTER
+================================= */
+
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 45px;
+    width: min(100% - 40px, 960px);
+    margin: 55px auto 70px;
+}
+
+.auth-decoration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+    padding: 40px 25px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-dark);
+}
+
+.auth-hotel-icon {
+    width: 160px;
+    height: 120px;
+    margin-bottom: 22px;
+}
+
+.auth-hotel-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-decoration h1 {
+    margin-bottom: 15px;
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.auth-decoration > p {
+    max-width: 320px;
+    color: #e2f6fa;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.auth-decoration-line {
+    width: 45px;
+    height: 3px;
+    margin: 18px auto;
+    background: var(--accent);
+}
+
+.auth-label {
+    color: #d5f6fa;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.auth-card {
+    align-self: center;
+    padding: 35px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 35px rgba(28, 65, 75, .06);
+}
+
+.auth-card-heading {
+    margin-bottom: 25px;
+}
+
+.auth-step {
+    color: var(--primary);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.auth-card-heading h2 {
+    margin: 12px 0;
+    color: var(--text);
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.auth-card-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.auth-field label {
+    color: #3e4a4d;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.auth-field input,
+.auth-field select,
+.auth-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #dce2e3;
+    border-radius: 2px;
+    outline: none;
+    background: #fbfcfc;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 11px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.auth-field input:focus,
+.auth-field select:focus,
+.auth-field textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(50, 153, 178, .12);
+}
+
+.auth-field input::placeholder {
+    color: #a0aaac;
+}
+
+.auth-help {
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.auth-help ul {
+    padding-left: 17px;
+    margin: 5px 0;
+}
+
+.auth-help a {
+    color: var(--primary-dark);
+}
+
+.auth-error {
+    color: #c83f55;
+    font-size: 10px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.auth-error p {
+    margin: 0 0 5px;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 5px;
+    padding: 14px;
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+}
+
+.auth-submit:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+}
+
+.auth-switch {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #eceeed;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 2;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    color: var(--accent);
+}
+
+.auth-footer-note {
+    margin-top: 20px;
+    color: #a1abad;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 480px;
+        margin-top: 30px;
+    }
+
+    .auth-decoration {
+        min-height: 290px;
+        padding: 25px 20px;
+    }
+
+    .auth-hotel-icon {
+        width: 115px;
+        height: 86px;
+        margin-bottom: 12px;
+    }
+
+    .auth-decoration h1 {
+        font-size: 27px;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .auth-page {
+        width: calc(100% - 24px);
+        margin-top: 20px;
+    }
+
+    .auth-card {
+        padding: 22px 16px;
+    }
+}
+
+
+.auth-page {
+    min-height: calc(100vh - 140px);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+
+    display: grid;
+    grid-template-columns: 430px 520px;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Ліва бірюзова панель */
+.auth-decoration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 550px;
+    padding: 40px;
+    background: #329bb0;
+    color: white;
+    text-align: center;
+}
+
+/* Блок форми */
+.auth-card {
+    width: 100%;
+    max-width: 520px;
+    margin: 0;
+    padding: 45px;
+
+    background: white;
+    border: 1px solid #e1e9ed;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(30, 70, 90, 0.06);
+}
+
+/* Адаптація для телефонів */
+@media (max-width: 850px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        gap: 25px;
+    }
+
+    .auth-decoration {
+        min-height: 300px;
+    }
+
+    .auth-card {
+        max-width: 100%;
+    }
+}
+
+
+/* Навігація */
+.navbar-container {
+    padding: 10px 35px;
+}
+
+.main-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 30px;
+}
+
+.navbar-auth form {
+    margin: 0;
+}
+
+/* Кнопки авторизації */
+.nav-auth-button {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Login */
+.login-button {
+    color: #269c9c;
+    background: transparent;
+    border: 1px solid #269c9c;
+}
+
+.login-button:hover {
+    background: #e5f5f4;
+    color: #207f83;
+}
+
+/* Register */
+.register-button {
+    color: white;
+    background: #269c9c;
+    border: 1px solid #269c9c;
+}
+
+.register-button:hover {
+    background: #207f83;
+    border-color: #207f83;
+    color: white;
+}
+
+/* Logout */
+.logout-button {
+    color: white;
+    background: #269c9c;
+    border: 1px solid #269c9c;
+}
+
+.logout-button:hover {
+    background: #207f83;
+    border-color: #207f83;
+}
+
+/* Мобільна версія */
+@media (max-width: 991px) {
+    .main-nav {
+        margin-left: 0;
+        align-items: flex-start;
+        padding-top: 15px;
+    }
+
+    .navbar-auth {
+        margin-left: 0;
+        margin-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.booking-page {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    color: #263746;
+}
+
+.booking-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.booking-label {
+    color: #36a6a6;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.booking-heading h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.booking-heading p {
+    color: #788995;
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.booking-info,
+.booking-form {
+    background: #ffffff;
+    border: 1px solid #e1e9ed;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(30, 70, 90, 0.06);
+}
+
+.booking-info h2,
+.booking-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.booking-info p {
+    color: #788995;
+    line-height: 1.7;
+}
+
+.booking-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e1e9ed;
+    border-bottom: 1px solid #e1e9ed;
+    padding: 18px 0;
+    margin: 25px 0;
+}
+
+.booking-price strong {
+    color: #269c9c;
+    font-size: 22px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    margin: 12px 0 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce5e9;
+    border-radius: 9px;
+    font-family: inherit;
+    outline: none;
+}
+
+.booking-form input:focus {
+    border-color: #36a6a6;
+}
+
+.booking-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.booking-submit {
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #269c9c;
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.booking-submit:hover {
+    background: #207f83;
+}
+
+@media (max-width: 700px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-dates {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.success-page {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.success-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background: white;
+    border: 1px solid #e1e9ed;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(30, 70, 90, 0.06);
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #e0f5f1;
+    color: #269c9c;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.success-label {
+    color: #36a6a6;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.success-container h1 {
+    font-size: 32px;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.success-description {
+    color: #788995;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.success-details {
+    padding: 25px;
+    background: #f7fafb;
+    border-radius: 13px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.success-details h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.success-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e1e9ed;
+    font-size: 14px;
+}
+
+.success-row:last-child {
+    border-bottom: none;
+}
+
+.success-row span {
+    color: #788995;
+}
+
+.success-row strong {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.pending-status {
+    color: #269c9c;
+}
+
+.success-button {
+    display: block;
+    padding: 14px;
+    border-radius: 9px;
+    background: #269c9c;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.success-button:hover {
+    background: #207f83;
+    color: white;
+}
+
+.success-footer {
+    color: #9aa8b0;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@media (max-width: 500px) {
+    .success-container {
+        padding: 25px 18px;
+    }
+
+    .success-container h1 {
+        font-size: 25px;
+    }
+
+    .success-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .success-row strong {
+        text-align: left;
+    }
+}

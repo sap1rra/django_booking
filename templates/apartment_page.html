@@ -1,15 +1,73 @@
 {% extends "base.html" %}
- {% block content %}
 
-    <h1>{{ apartment.name }}</h1>
-  
+{% block content %}
 
-        <div class="card" style="width: 18rem;">
-        <img src="{{apartment.image.url}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{apartment.name}}</h5>
-            <p class="card-text">{{apartment.price}}</p>
+<div class="apartment-page">
+
+    <div class="apartment-heading">
+        <p class="apartment-label">BLUESTAY / APARTMENTS</p>
+        <h1>{{ apartment.name }}</h1>
+        <p>{{ apartment.location }}</p>
+    </div>
+
+    <div class="apartment-container">
+
+        <div class="apartment-image">
+            {% if apartment.image %}
+                <img src="{{ apartment.image.url }}" alt="{{ apartment.name }}">
+            {% else %}
+                <div class="no-apartment-image">
+                    No image available
+                </div>
+            {% endif %}
         </div>
+
+        <div class="apartment-info">
+
+            <p class="info-label">ABOUT APARTMENT</p>
+
+            <h2>{{ apartment.name }}</h2>
+
+            <p class="apartment-description">
+                {{ apartment.description|default:"Comfortable apartments for your stay." }}
+            </p>
+
+            <div class="apartment-details">
+                <div>
+                    <span>Location</span>
+                    <strong>{{ apartment.location }}</strong>
+                </div>
+
+                <div>
+                    <span>Apartment type</span>
+                    <strong>{{ apartment.get_type_apartment_display }}</strong>
+                </div>
+
+                <div>
+                    <span>Guests</span>
+                    <strong>{{ apartment.capacity }}</strong>
+                </div>
+            </div>
+
+            <div class="apartment-price">
+                <span>Price per night</span>
+                <strong>{{ apartment.price_per_night }} ₴</strong>
+            </div>
+
+            {% if apartment.is_available %}
+                <a href="{% url 'booking' apartment.id %}" class="apartment-book-button">
+                    Book now
+                </a>
+            {% else %}
+                <p class="apartment-unavailable">
+                    Currently unavailable
+                </p>
+            {% endif %}
+
         </div>
- 
- {% endblock  %}
+
+    </div>
+
+</div>
+
+{% endblock %}

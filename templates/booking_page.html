@@ -7,7 +7,7 @@
     <div class="booking-heading">
         <p class="booking-label">BLUESTAY / BOOKING</p>
         <h1>Book your stay</h1>
-        <p>Заповніть форму, щоб забронювати апартаменти.</p>
+        <p>Fill out the form to book your apartment.</p>
     </div>
 
     <div class="booking-container">
@@ -18,11 +18,11 @@
             <p>{{ apartment.description }}</p>
 
             <div class="booking-price">
-                <span>Ціна за ніч</span>
+                <span>Price per night</span>
                 <strong>{{ apartment.price_per_night }} ₴</strong>
             </div>
 
-            <p>Максимальна кількість гостей: {{ apartment.capacity }}</p>
+            <p>Maximum number of guests: {{ apartment.capacity }}</p>
         </div>
 
         <form method="POST" class="booking-form">
@@ -30,23 +30,23 @@
 
             <h2>Your details</h2>
 
-            <label for="name">Ім'я та прізвище</label>
+            <label for="name">Name and surname</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Електронна пошта</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="phone">Номер телефону</label>
+            <label for="phone">Phone number</label>
             <input type="tel" id="phone" name="phone" required>
 
             <div class="booking-dates">
                 <div>
-                    <label for="check_in">Дата заїзду</label>
+                    <label for="check_in">Check-in date</label>
                     <input type="date" id="check_in" name="check_in" required>
                 </div>
 
                 <div>
-                    <label for="check_out">Дата виїзду</label>
+                    <label for="check_out">Check-out date</label>
                     <input type="date" id="check_out" name="check_out" required>
                 </div>
             </div>

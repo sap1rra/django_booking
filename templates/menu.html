@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <nav class="navbar navbar-expand-lg site-navbar">
@@ -22,12 +21,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
 
+            <ul class="navbar-nav main-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'home' %}">
-                        Home
-                    </a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -41,14 +38,30 @@
                         Hotels
                     </a>
                 </li>
-
             </ul>
-            {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'register' %}">Register</a>
-            {% endif %}
+
+            <div class="navbar-auth">
+                {% if user.is_authenticated %}
+
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-auth-button logout-button">
+                            Logout
+                        </button>
+                    </form>
+
+                {% else %}
+
+                    <a href="{% url 'login' %}" class="nav-auth-button login-button">
+                        Login
+                    </a>
+
+                    <a href="{% url 'register' %}" class="nav-auth-button register-button">
+                        Register
+                    </a>
+
+                {% endif %}
+            </div>
 
         </div>
     </div>

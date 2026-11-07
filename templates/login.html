@@ -1,10 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Log in</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_div}}
-        <button type="submit" class="btn btn-primary">Зареєструватися</button>
-    </form>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <p class="auth-label">BLUESTAY / LOGIN</p>
+
+        <h1>Welcome back!</h1>
+
+        <p class="auth-description">
+           Log in to your account to continue.
+        </p>
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="auth-field">
+                    <label for="{{ field.id_for_label }}">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="auth-error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+                <div class="auth-error">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="auth-submit">
+                Log in
+            </button>
+        </form>
+
+        <p class="auth-switch">
+            Don't have an account yet?
+            <a href="{% url 'register' %}">Sign up</a>
+        </p>
+
+        <p class="auth-footer-note">
+            FIND YOUR PLACE WITH BLUESTAY
+        </p>
+
+    </div>
+
+</div>
+
 {% endblock %}
